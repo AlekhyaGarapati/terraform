@@ -24,5 +24,20 @@ pipeline{
                 '''
             }
         }
+        stage ('Approve') {
+            steps {
+                input 'shall i approve'
+            }
+        }
+        stage ('apply') {
+            steps {
+                sh '''
+                   cd roboshop-infra-standard/01-vpc
+                   pwd
+                   ls -ltr
+                   terraform apply -auto-approve
+                '''
+            }
+        }
     }
 }
