@@ -1,0 +1,25 @@
+pipeline{
+    agent { node {label 'agent1'}}
+    stages {
+        stage ('init') {
+            steps {
+                sh '''
+                   cd 01-vpc
+                   pwd
+                   ls -ltr
+                   terraform init
+                '''
+            }
+        }
+        stage ('plan') {
+            steps {
+                sh '''
+                   cd 01-vpc
+                   pwd
+                   ls -ltr
+                   terraform plan
+                '''
+            }
+        }
+    }
+}

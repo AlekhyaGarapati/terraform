@@ -11,4 +11,5 @@ module roboshop_infra_advanced {
  is_peering_required = var.is_peering_required
  default_vpc_id = data.aws_vpc.default_vpc.id
  default_route_table_id = data.aws_vpc.default_vpc.main_route_table_id
+ default_cidr_block = data.aws_vpc.default_vpc.cidr_block
  }
