@@ -17,7 +17,7 @@ pipeline{
         stage ('plan') {
             steps {
                 sh '''
-                   cd 01-vpc
+                   cd roboshop-infra-standard/01-vpc
                    pwd
                    ls -ltr
                    terraform plan
